@@ -8,3 +8,13 @@ C:\Users\Santa\Desktop\C#\VisualStudio2008-WinForms\obj\Debug\Draw.csproj.CoreCo
 C:\Users\Santa\Desktop\C#\VisualStudio2008-WinForms\obj\Debug\Draw.exe
 C:\Users\Santa\Desktop\C#\VisualStudio2008-WinForms\obj\Debug\Draw.pdb
 C:\Users\Santa\Desktop\C#\VisualStudio2008-WinForms\obj\Debug\Draw.Properties.Resources.resources
+C:\Users\georgi.d.georgiev\Desktop\GUI-project\VisualStudio2008-WinForms\bin\Debug\Draw.exe
+C:\Users\georgi.d.georgiev\Desktop\GUI-project\VisualStudio2008-WinForms\bin\Debug\Draw.pdb
+C:\Users\georgi.d.georgiev\Desktop\GUI-project\VisualStudio2008-WinForms\obj\Debug\Draw.csproj.AssemblyReference.cache
+C:\Users\georgi.d.georgiev\Desktop\GUI-project\VisualStudio2008-WinForms\obj\Debug\Draw.Properties.Resources.resources
+C:\Users\georgi.d.georgiev\Desktop\GUI-project\VisualStudio2008-WinForms\obj\Debug\Draw.DoubleBufferedPanel.resources
+C:\Users\georgi.d.georgiev\Desktop\GUI-project\VisualStudio2008-WinForms\obj\Debug\Draw.MainForm.resources
+C:\Users\georgi.d.georgiev\Desktop\GUI-project\VisualStudio2008-WinForms\obj\Debug\Draw.csproj.GenerateResource.cache
+C:\Users\georgi.d.georgiev\Desktop\GUI-project\VisualStudio2008-WinForms\obj\Debug\Draw.csproj.CoreCompileInputs.cache
+C:\Users\georgi.d.georgiev\Desktop\GUI-project\VisualStudio2008-WinForms\obj\Debug\Draw.exe
+C:\Users\georgi.d.georgiev\Desktop\GUI-project\VisualStudio2008-WinForms\obj\Debug\Draw.pdb

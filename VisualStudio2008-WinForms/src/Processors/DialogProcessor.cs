@@ -1,6 +1,8 @@
 ﻿using Draw.src.Model;
+using Draw.src.util;
 using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace Draw
 {
@@ -14,15 +16,17 @@ namespace Draw
 		public DialogProcessor()
 		{
 		}
-		
-		#endregion
-		
-		#region Properties
-		
-		/// <summary>
-		/// Избран елемент.
-		/// </summary>
-		private Shape selection;
+
+        #endregion
+
+        #region Properties
+
+        public HandleTypeEnum currentHandle = HandleTypeEnum.None;
+
+        /// <summary>
+        /// Избран елемент.
+        /// </summary>
+        private Shape selection;
 		public Shape Selection {
 			get { return selection; }
 			set { selection = value; }
@@ -113,6 +117,19 @@ namespace Draw
             ShapeList.Add(line);
         }
 
+        public void AddRandomEllipse()
+        {
+            Random rnd = new Random();
+            int x = rnd.Next(100, 600);
+            int y = rnd.Next(100, 600);
+			int width = 150;
+			int height = 100;
+
+            EllipseShape ellipse = new EllipseShape(new RectangleF(x, y, width, height));
+            ellipse.FillColor = Color.White;
+
+            ShapeList.Add(ellipse);
+        }
 
         /// <summary>
         /// Проверява дали дадена точка е в елемента.
@@ -132,17 +149,49 @@ namespace Draw
 			}
 			return null;
 		}
-		
-		/// <summary>
-		/// Транслация на избраният елемент на вектор определен от <paramref name="p>p</paramref>
-		/// </summary>
-		/// <param name="p">Вектор на транслация.</param>
-		public void TranslateTo(PointF p)
-		{
-			if (selection != null) {
-				selection.Location = new PointF(selection.Location.X + p.X - lastLocation.X, selection.Location.Y + p.Y - lastLocation.Y);
-				lastLocation = p;
-			}
-		}
+
+        /// <summary>
+        /// Транслация на избраният елемент на вектор определен от <paramref name="p>p</paramref>
+        /// </summary>
+        /// <param name="p">Вектор на транслация.</param>
+        public void TranslateTo(PointF newPosition)
+        {
+            if (Selection != null)
+            {
+                float offsetX = newPosition.X - LastLocation.X;
+                float offsetY = newPosition.Y - LastLocation.Y;
+
+                if (Selection is LineShape lineShape)
+                {
+                    lineShape.Start = new PointF(lineShape.Start.X + offsetX, lineShape.Start.Y + offsetY);
+                    lineShape.End = new PointF(lineShape.End.X + offsetX, lineShape.End.Y + offsetY);
+                }
+
+                Selection.Rectangle = new RectangleF(Selection.Rectangle.X + offsetX,
+                                                     Selection.Rectangle.Y + offsetY,
+                                                     Selection.Rectangle.Width,
+                                                     Selection.Rectangle.Height);
+
+                LastLocation = newPosition;
+            }
+        }
+
+
+        public void ResizeShape(HandleTypeEnum handleType, PointF point)
+        {
+            if (Selection != null)
+            {
+                Selection.ResizeShape(handleType, point);
+            }
+        }
+
+        public void RotateShape(PointF newLocation)
+        {
+            if (Selection != null)
+            {
+                // Implement the rotation logic here.
+            }
+        }
+
     }
 }

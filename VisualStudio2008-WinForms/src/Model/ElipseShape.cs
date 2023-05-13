@@ -20,6 +20,8 @@ namespace Draw.src.Model
         {
             base.DrawSelf(grfx);
             grfx.DrawEllipse(Pens.Black, Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
+
+            DrawSelection(grfx);
         }
     }
 
